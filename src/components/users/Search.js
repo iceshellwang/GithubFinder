@@ -5,12 +5,16 @@ export class Search extends Component {
         text: ''
     }
     onChange = (e) => {
-        this.setState({ text: e.target.value })
+        this.setState({ [e.target.name]: e.target.value })
+    }
+    onSubmit(e) {
+        e.preventDefault()
+        console.log(this.state.text)
     }
     render() {
         return (
             <div>
-                <form className='form'>
+                <form onSubmit={this.onSubmit.bind(this)} className='form'>
                     <input type='text' placeholder='search users...' name='text' onChange={this.onChange}
                         value={this.state.text}></input>
                     <input type='submit' className='btn btn-dark btn-block' value='search'></input>
