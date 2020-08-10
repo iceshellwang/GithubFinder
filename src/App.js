@@ -7,7 +7,8 @@ import Users from './components/users/Users';
 class App extends Component {
   state = {
     users: [],
-    loading: false
+    loading: false,
+    alert: null
   };
   // async componentDidMount() {
 
@@ -25,6 +26,10 @@ class App extends Component {
 
   clearUsers = () => {
     this.setState({ users: [], loading: false })
+  }
+  setAlert = (msg, type) => {
+    this.setState({ alert: { msg, type } })
+
   }
   render() {
     const { loading, users, } = this.state
