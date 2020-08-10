@@ -30,6 +30,7 @@ class App extends Component {
   }
   setAlert = (msg, type) => {
     this.setState({ alert: { msg, type } })
+    setTimeout(() => this.setState({ alert: null }), 5000)
 
   }
   render() {
@@ -40,7 +41,7 @@ class App extends Component {
         <div className='container'>
           <Alert alert={this.state.alert} />
           <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} showClear={users.length > 0 ? true : false}
-            setAlert={this.state.setAlert} />
+            setAlert={this.setAlert} />
           <Users loading={loading} users={users} />
         </div>
       </div>
