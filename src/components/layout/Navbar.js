@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import About from '../pages/About'
 
 const Navbar = ({ icon, title }) => {
 
@@ -9,6 +10,14 @@ const Navbar = ({ icon, title }) => {
                 <i className={icon} />
                 {title}
             </h1>
+            <ul>
+                <li>
+                    <a href='/'>Home</a>
+                </li>
+                <li>
+                    <a href='/about'>About this App</a>
+                </li>
+            </ul>
         </nav>
     )
 
