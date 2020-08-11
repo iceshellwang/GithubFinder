@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 import axios from 'axios';
+import About from './components/pages/About'
 import Navbar from './components/layout/Navbar';
 import Alert from './components/layout/Alert';
 import Search from './components/users/Search';
@@ -50,6 +51,7 @@ class App extends Component {
                   <Users loading={loading} users={users} />
                 </Fragment>
               )} />
+              <Route exact path='/about' component={About} />
             </Switch>
 
           </div>
