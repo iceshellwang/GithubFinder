@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import About from '../pages/About'
+
 const Navbar = ({ icon, title }) => {
 
     return (
@@ -11,10 +12,10 @@ const Navbar = ({ icon, title }) => {
             </h1>
             <ul>
                 <li>
-                    <Link to='/'>Home</Link>
+                    <a href='/'>Home</a>
                 </li>
                 <li>
-                    <Link to='/about'>About this App</Link>
+                    <a href='/about'>About this App</a>
                 </li>
             </ul>
         </nav>
