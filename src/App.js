@@ -7,6 +7,7 @@ import Navbar from './components/layout/Navbar';
 import Alert from './components/layout/Alert';
 import Search from './components/users/Search';
 import Users from './components/users/Users';
+import User from './components/users/User';
 class App extends Component {
   state = {
     users: [],
@@ -52,6 +53,11 @@ class App extends Component {
                 </Fragment>
               )} />
               <Route exact path='/about' component={About} />
+              <Route exact path='/user:login' render={props => (
+                <Fragment>
+                  <User {...props} getUser={this.getUser} user={this.state.user} />
+                </Fragment>
+              )} />
             </Switch>
 
           </div>
