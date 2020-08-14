@@ -45,9 +45,12 @@ export class User extends Component {
 
           </div>
           <div>
-            {bio && <Fragment>
+            {bio && (<Fragment>
               <h3>Bio</h3>
-              <p>{bio}</p></Fragment>}
+              <p>{bio}</p></Fragment>)}
+            <a href={html_url} className='btn btn-dark my-1'>
+              Visit Github Profile
+              </a>
           </div>
         </div>
       </Fragment>
