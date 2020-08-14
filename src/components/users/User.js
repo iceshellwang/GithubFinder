@@ -34,7 +34,9 @@ export class User extends Component {
         <Link to='/' className='btn btn-light'>
           Back to search
         </Link>
-        <div>{name}</div>
+       hireable {' '}
+        {hireable ? <i className='fas fa-check text-success' /> :
+          <i className='fas fa-times-circle text-danger' />}
       </Fragment>
     );
   }
