@@ -31,10 +31,10 @@ export class User extends Component {
 
     return (
       <Fragment>
-        <Link to='/' className='btn '>
+        <Link to='/' className='btn btn-light'>
           Back to search
         </Link>
-        <div>user</div>
+        <div>{name}</div>
       </Fragment>
     );
   }
