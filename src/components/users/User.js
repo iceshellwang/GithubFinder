@@ -20,6 +20,7 @@ export class User extends Component {
       blog,
       login,
       html_url,
+      company,
       followers,
       following,
       public_repos,
@@ -57,6 +58,20 @@ export class User extends Component {
                   <strong>
                     Username:
                     </strong>{login}
+                </Fragment>}
+              </li>
+              <li>
+                {login && <Fragment>
+                  <strong>
+                    Company:
+                    </strong>{company}
+                </Fragment>}
+              </li>
+              <li>
+                {login && <Fragment>
+                  <strong>
+                    Website:
+                    </strong>{blog}
                 </Fragment>}
               </li>
             </ul>
