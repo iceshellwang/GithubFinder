@@ -34,6 +34,7 @@ export class User extends Component {
         <Link to='/' className='btn '>
           Back to search
         </Link>
+        <div>user</div>
       </Fragment>
     );
   }
