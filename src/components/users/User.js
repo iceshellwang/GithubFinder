@@ -40,6 +40,9 @@ export class User extends Component {
         <div className='card grid-2'>
           <div className='all-center'>
             <img src={avatar_url} style={{ width: '150px' }} className='round-img' alt=""></img>
+            <h1>{name}</h1>
+            <p>Location:{location}</p>
+
           </div>
         </div>
       </Fragment>
