@@ -1,9 +1,7 @@
 import React from 'react'
 
-export const Repo = () => {
+export const Repo = ({ repos }) => {
     return (
-        <div>
-
-        </div>
+        repos.map(repo => <RepoItem repo={repo} key={repo.id} />)
     )
 }
