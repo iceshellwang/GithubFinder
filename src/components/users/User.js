@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom';
 export class User extends Component {
   componentDidMount() {
     this.props.getUser(this.props.match.params.login);
+    this.props.getUserRepos(this.props.match.params.login);
   }
   static propsTypes = {
     loading: PropTypes.bool,
     user: PropTypes.object.isRequired,
     getUser: PropTypes.func.isRequired,
+    getUserRepos: PropTypes.func.isRequired,
   };
   render() {
     const {
