@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
+const Search = ({ searchUsers, showClear, clearUsers }) => {
     const [text, setText] = useState('')
 
     const onChange = (e) => {
@@ -9,12 +9,12 @@ const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
     }
     const onSubmit = (e) => {
         e.preventDefault()
-        if (text === '') {
-            setAlert('please input something', 'light')
+        if (this.state.text === '') {
+            this.props.setAlert('please input something', 'light')
         }
         else {
-            searchUsers(text)
-            setText('')
+            this.props.searchUsers(this.state.text)
+            this.setState({ text: '' })
         }
     }
 
