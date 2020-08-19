@@ -54,8 +54,8 @@ const App = () => {
 
   };
   setAlert = (msg, type) => {
-    this.setState({ alert: { msg, type } });
-    setTimeout(() => this.setState({ alert: null }), 5000);
+    setAlert({ msg, type });
+    setTimeout(() => setAlert(null), 5000);
   };
 
 
