@@ -41,17 +41,17 @@ const App = () => {
   };
   //get users repo
   getUserRepos = async (username) => {
-
     setLoading(true)
     const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}
   &client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
-
     setRepos(res.data)
     setLoading(false)
   };
   //clear users
   clearUsers = () => {
-    this.setState({ users: [], loading: false });
+    setUsers([])
+    setLoading(false)
+
   };
   setAlert = (msg, type) => {
     this.setState({ alert: { msg, type } });
