@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
-import githubContext from './githubContext'
-import githubReducer from './githubReducer'
+import GithubContext from './githubContext'
+import GithubReducer from './githubReducer'
 import axios from 'axios'
 import { SEARCH_USERS, SET_LOADING, GET_REPOS, GET_USER, CLEAR_USERS } from '../types'
 
@@ -12,7 +12,7 @@ const GithubState = props => {
         repos: []
     }
 
-    const [state, dispatch] = useReducer(githubReducer, initialState)
+    const [state, dispatch] = useReducer(GithubReducer, initialState)
 
     //actions
 
