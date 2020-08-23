@@ -18,10 +18,10 @@ const Users = () => {
     );
   }
 };
-Users.propTypes = {
-  users: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired
-};
+// Users.propTypes = {
+//   users: PropTypes.array.isRequired,
+//   loading: PropTypes.bool.isRequired
+// };
 const userStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3,1fr)',
