@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import GithubContext from '../context/github/githubContext'
+import Users from './Users'
 
-const Search = ({ showClear, clearUsers, setAlert }) => {
+const Search = ({ setAlert }) => {
     const [text, setText] = useState('')
     const githubContext = useContext(GithubContext)
     const onChange = (e) => {
@@ -25,11 +26,9 @@ const Search = ({ showClear, clearUsers, setAlert }) => {
                 <input type='text' placeholder='search users...' name='text' onChange={onChange}
                     value={text}></input>
                 <input type='submit' className='btn btn-dark btn-block' value='search'></input>
-
-
             </form>
-            {showClear ?
-                <button className='btn btn-light btn-block' onClick={clearUsers}></button> : null}
+            {githubContext.users.length > 0 ?
+                <button className='btn btn-light btn-block' onClick={githubContext.clearUsers}></button> : null}
 
 
         </div>
