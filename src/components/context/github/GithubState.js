@@ -23,6 +23,8 @@ const GithubState = props => {
 
     };
 
+
+    const clearUsers = () => dispatch({ type: CLEAR_USERS })
     // const getUserRepos = async (username) => {
     //     setLoading(true)
     //     const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}
