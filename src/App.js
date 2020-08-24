@@ -10,8 +10,8 @@ import Users from './components/users/Users';
 import User from './components/users/User';
 import GithubState from './components/context/github/GithubState'
 const App = () => {
-  const [users, setUsers] = useState([])
-  const [user, setUser] = useState({})
+
+
   const [loading, setLoading] = useState(false)
   const [alert, setAlert] = useState(null)
   const [repos, setRepos] = useState([])
@@ -24,14 +24,6 @@ const App = () => {
   //   this.setState({ users: res.data, loading: false });
   // }
 
-  //search single user
-  const getUser = async (username) => {
-    setLoading(true)
-    const res = await axios.get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}
-  &client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
-    setUser(res.data)
-    setLoading(false)
-  };
   //get users repo
   const getUserRepos = async (username) => {
     setLoading(true)
@@ -77,9 +69,7 @@ const App = () => {
                   <Fragment>
                     <User
                       {...props}
-                      getUser={getUser}
                       getUserRepos={getUserRepos}
-                      user={user}
                       loading={loading}
                       repos={repos}
                     />
