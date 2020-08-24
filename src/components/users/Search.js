@@ -37,9 +37,6 @@ const Search = ({ setAlert }) => {
 }
 
 Search.propTypes = {
-
-    clearUsers: PropTypes.func.isRequired,
-    showClear: PropTypes.bool.isRequired,
     setAlert: PropTypes.func.isRequired,
 }
 
