@@ -8,6 +8,7 @@ import Search from './components/users/Search';
 import Users from './components/users/Users';
 import User from './components/users/User';
 import GithubState from './components/context/github/GithubState'
+import AlertState from './components/context/alert/AlertState'
 const App = () => {
 
   const [alert, setAlert] = useState(null)
@@ -24,44 +25,38 @@ const App = () => {
 
   //clear users
 
-  const showAlert = (msg, type) => {
-    setAlert({ msg, type });
-    setTimeout(() => setAlert(null), 5000);
-  };
-
 
   return (
     <GithubState>
-      <Router>
-        <div className='App'>
-          <Navbar />
-          <div className='container'>
-            <Alert alert={alert} />
-            <Switch>
-              <Route
-                exact
-                path='/'
-                render={(props) => (
-                  <Fragment>
-                    <Search
+      <AlertState>
+        <Router>
+          <div className='App'>
+            <Navbar />
+            <div className='container'>
+              <Alert />
+              <Switch>
+                <Route
+                  exact
+                  path='/'
+                  render={(props) => (
+                    <Fragment>
+                      <Search
+                      />
+                      <Users />
+                    </Fragment>
+                  )}
+                />
+                <Route exact path='/about' component={About} />
+                <Route
+                  exact
+                  path='/user/:login'
+                  component={User}
 
-                      setAlert={showAlert}
-                    />
-                    <Users />
-                  </Fragment>
-                )}
-              />
-              <Route exact path='/about' component={About} />
-              <Route
-                exact
-                path='/user/:login'
-                component={User}
-
-              />
-            </Switch>
+                />
+              </Switch>
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router></AlertState>
     </GithubState>
   );
 
