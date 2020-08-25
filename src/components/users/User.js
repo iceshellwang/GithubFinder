@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Repos from '../repos/Repos'
 import GithubContext from '../context/github/githubContext'
-const User = ({ repos, match, getUserRepos }) => {
+const User = ({ match }) => {
   const githubContext = useContext(GithubContext)
-  const { loading, user, getUser } = githubContext
+  const { loading, user, getUser, getUserRepos, repos } = githubContext
   useEffect(() => {
     getUser(match.params.login);
     getUserRepos(match.params.login);
@@ -91,9 +91,5 @@ const User = ({ repos, match, getUserRepos }) => {
 
 }
 
-User.propsTypes = {
-  getUserRepos: PropTypes.func.isRequired,
-  repos: PropTypes.array.isRequired,
-};
 
 export default User;
