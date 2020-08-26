@@ -11,9 +11,6 @@ import GithubState from './components/context/github/GithubState'
 import AlertState from './components/context/alert/AlertState'
 const App = () => {
 
-  const [alert, setAlert] = useState(null)
-
-
   // async componentDidMount() {
 
   //   this.setState({ loading: true });
