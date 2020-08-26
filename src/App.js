@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import About from './components/pages/About';
+import Home from './components/pages/Home';
 import Navbar from './components/layout/Navbar';
 import Alert from './components/layout/Alert';
 import Search from './components/users/Search';
@@ -35,13 +36,7 @@ const App = () => {
                 <Route
                   exact
                   path='/'
-                  render={(props) => (
-                    <Fragment>
-                      <Search
-                      />
-                      <Users />
-                    </Fragment>
-                  )}
+                  component={Home}
                 />
                 <Route exact path='/about' component={About} />
                 <Route
