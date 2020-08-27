@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
+import NotFound from './components/pages/NotFound';
 import Navbar from './components/layout/Navbar';
 import Alert from './components/layout/Alert';
 import Search from './components/users/Search';
@@ -45,6 +46,7 @@ const App = () => {
                   component={User}
 
                 />
+                <Route component={NotFound} />
               </Switch>
             </div>
           </div>
