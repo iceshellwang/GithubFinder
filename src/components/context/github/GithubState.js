@@ -28,8 +28,9 @@ const GithubState = props => {
     //actions
     const searchUsers = async (text) => {
         setLoading()
-        const res = await axios.get(`https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}
-        &client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+        const res = await axios.get
+            (`https://api.github.com/search/users?q=${text}&client_id=${githubClientId}
+        &client_secret=${githubClientSecret}`);
         dispatch({ type: SEARCH_USERS, payload: res.data.items })
 
     };
@@ -38,8 +39,8 @@ const GithubState = props => {
     //search single user
     const getUser = async (username) => {
         setLoading()
-        const res = await axios.get(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}
-  &client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+        const res = await axios.get(`https://api.github.com/users/${username}?client_id=${githubClientId}
+  &client_secret=${githubClientSecret}`);
         dispatch({ type: GET_USER, payload: res.data })
 
     };
@@ -48,8 +49,8 @@ const GithubState = props => {
     //get users repo
     const getUserRepos = async (username) => {
         setLoading()
-        const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}
-  &client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+        const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${githubClientId}
+  &client_secret=${githubClientSecret}`);
         dispatch({ type: GET_REPOS, payload: res.data })
     };
 
