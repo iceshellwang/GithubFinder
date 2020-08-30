@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react'
 import AlertContext from './alertContext'
 import AlertReducer from './alertReducer'
-import axios from 'axios'
 import { SET_ALERT, REMOVE_ALERT } from '../types'
 
 const AlertState = props => {
